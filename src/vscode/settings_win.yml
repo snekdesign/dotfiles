@@ -1,0 +1,7 @@
+'[plaintext][powershell]':
+  files.eol: "\r\n"
+editor.fontFamily: Microsoft YaHei
+files.dialog.defaultPath: E:\tmp
+MATLAB.installPath: C:\Program Files\MATLAB\R2024a
+terminal.integrated.defaultProfile.windows: MATLAB
+terminal.integrated.fontFamily: yaco618

@@ -1,0 +1,112 @@
+'[ahk2][bat][ini]':
+  files.eol: "\r\n"
+'[markdown]':
+  editor.tabSize: 2
+breadcrumbs.enabled: false
+debug.toolBarLocation: commandCenter
+diffEditor.experimental.showMoves: true
+diffEditor.hideUnchangedRegions.enabled: true
+diffEditor.useInlineViewWhenSpaceIsLimited: false
+editor.acceptSuggestionOnEnter: 'off'
+editor.bracketPairColorization.enabled: false
+editor.copyWithSyntaxHighlighting: false
+editor.detectIndentation: false
+editor.gotoLocation.multipleTypeDefinitions: goto
+editor.guides.bracketPairs: true
+editor.guides.bracketPairsHorizontal: false
+editor.guides.highlightActiveIndentation: false
+editor.guides.indentation: false
+editor.inlayHints.enabled: 'off'
+editor.links: false
+editor.minimap.enabled: false
+editor.quickSuggestions:
+  strings: 'on'
+editor.roundedSelection: false
+editor.scrollBeyondLastLine: false
+editor.semanticTokenColorCustomizations:
+  '[Default Dark Modern]':
+    enabled: true
+    rules:
+      clsParameter:python: '#569cd6'
+      selfParameter:python: '#569cd6'
+editor.stickyTabStops: true
+editor.suggest.localityBonus: true
+editor.suggestSelection: first
+editor.tabCompletion: 'on'
+editor.tokenColorCustomizations:
+  '[Default Dark Modern]':
+    textMateRules:
+    - scope: constant.language.boolean.matlab
+      settings:
+        foreground: '#dcdcaa'
+    - scope: constant.language.nan.matlab
+      settings:
+        foreground: '#dcdcaa'
+    - scope: entity.name.tag.yaml
+      settings:
+        foreground: '#9cdcfe'
+    - scope: keyword.operator.word.matlab
+      settings:
+        foreground: '#569cd6'
+explorer.autoReveal: false
+explorer.confirmDelete: false
+explorer.copyRelativePathSeparator: /
+explorer.fileNesting.enabled: true
+explorer.fileNesting.expand: false
+explorer.fileNesting.patterns:
+  '*.h': ${capture}.c, ${capture}.cc, ${capture}.cpp
+  '*.hpp': ${capture}.cpp
+  '*.pyi': ${capture}.pxd, ${capture}.py, ${capture}.pyx
+extensions.ignoreRecommendations: true
+files.associations:
+  .clangd: yaml
+  .condarc: yaml
+  .mambarc: yaml
+  history: diff
+  pixi.lock: yaml
+files.defaultLanguage: ${activeEditorLanguage}
+files.enableTrash: false
+files.eol: "\n"
+files.hotExit: 'off'
+files.simpleDialog.enable: true
+git.openRepositoryInParentFolders: never
+json.schemaDownload.enable: false
+markdown.preview.doubleClickToSwitchToEditor: false
+markdown.preview.openMarkdownLinks: inEditor
+MATLAB.telemetry: false
+outline.icons: false
+python.terminal.activateEnvironment: false
+search.mode: newEditor
+search.quickOpen.includeHistory: false
+search.searchEditor.defaultNumberOfContextLines: 0
+search.searchEditor.doubleClickBehaviour: selectWord
+security.workspace.trust.enabled: false
+task.saveBeforeRun: never
+telemetry.telemetryLevel: 'off'
+typescript.disableAutomaticTypeAcquisition: true
+update.mode: none
+window.enableMenuBarMnemonics: false
+window.newWindowDimensions: maximized
+window.openFoldersInNewWindow: 'off'
+window.openWithoutArgumentsInNewWindow: 'off'
+window.restoreWindows: none
+workbench.activityBar.location: hidden
+workbench.commandPalette.history: 0
+workbench.editor.autoLockGroups:
+  mainThreadWebview-simpleBrowser.view: false
+workbench.editor.empty.hint: hidden
+workbench.editor.enablePreview: false
+workbench.editor.historyBasedLanguageDetection: false
+workbench.editor.labelFormat: medium
+workbench.editor.languageDetection: false
+workbench.editor.languageDetectionHints:
+  untitledEditors: false
+workbench.editor.openPositioning: last
+workbench.editor.showTabs: none
+workbench.editorLargeFileConfirmation: 64
+workbench.enableExperiments: false
+workbench.layoutControl.enabled: false
+workbench.localHistory.enabled: false
+workbench.settings.enableNaturalLanguageSearch: false
+workbench.startupEditor: none
+workbench.tips.enabled: false

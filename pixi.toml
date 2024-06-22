@@ -1,0 +1,12 @@
+[project]
+name = 'dotfiles'
+channels = ['conda-forge']
+platforms = ['win-64']
+authors = ['snekdesign']
+license-file = 'LICENSE'
+readme = 'README.md'
+repository = 'https://github.com/snekdesign/dotfiles'
+
+[dependencies]
+go-yq = '>=4.18.1'
+m2-make = '*'

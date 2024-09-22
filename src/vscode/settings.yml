@@ -2,6 +2,7 @@
   files.eol: "\r\n"
 '[markdown]':
   editor.tabSize: 2
+basedpyright.analysis.typeCheckingMode: 'off'
 breadcrumbs.enabled: false
 debug.toolBarLocation: commandCenter
 diffEditor.experimental.showMoves: true
@@ -27,8 +28,11 @@ editor.semanticTokenColorCustomizations:
   '[Default Dark Modern]':
     enabled: true
     rules:
-      clsParameter:python: '#569cd6'
-      selfParameter:python: '#569cd6'
+      concept:cpp: '#4ec9b0'
+      parameter.readonly:c: '#4fc1ff'
+      parameter.readonly:cpp: '#4fc1ff'
+      variable.readonly:c: '#4fc1ff'
+      variable.readonly:cpp: '#4fc1ff'
 editor.stickyTabStops: true
 editor.suggest.localityBonus: true
 editor.suggestSelection: first
@@ -45,9 +49,18 @@ editor.tokenColorCustomizations:
     - scope: entity.name.tag.yaml
       settings:
         foreground: '#9cdcfe'
+    - scope: entity.source.cmake
+      settings:
+        foreground: '#569cd6'
     - scope: keyword.operator.word.matlab
       settings:
         foreground: '#569cd6'
+    - scope: storage.source.cmake
+      settings:
+        foreground: '#9cdcfe'
+    - scope: variable.parameter.function-call.python
+      settings:
+        foreground: '#6a9955'
 explorer.autoReveal: false
 explorer.confirmDelete: false
 explorer.copyRelativePathSeparator: /
@@ -92,8 +105,6 @@ window.openWithoutArgumentsInNewWindow: 'off'
 window.restoreWindows: none
 workbench.activityBar.location: hidden
 workbench.commandPalette.history: 0
-workbench.editor.autoLockGroups:
-  mainThreadWebview-simpleBrowser.view: false
 workbench.editor.empty.hint: hidden
 workbench.editor.enablePreview: false
 workbench.editor.historyBasedLanguageDetection: false

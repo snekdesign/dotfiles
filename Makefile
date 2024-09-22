@@ -22,5 +22,5 @@ build/vscode/settings.json :
 
 build/vscode/tasks.json :
 	mkdir -p build/vscode
-	cat src/vscode/tasks_win.yml \
+	cat src/vscode/tasks.yml src/vscode/tasks_win.yml \
 		| yq -py -oj -I4 > $@

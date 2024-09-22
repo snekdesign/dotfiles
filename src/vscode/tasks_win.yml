@@ -1,5 +1,7 @@
-version: 2.0.0
-tasks:
+- label: Documentation
+  type: process
+  command: wt
+  args: [-d, '.', -p, mkdocs]
 - label: Windows Terminal
   type: process
   command: wt

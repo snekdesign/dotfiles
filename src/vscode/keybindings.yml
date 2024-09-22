@@ -1,3 +1,7 @@
+- key: f1
+  command: workbench.action.tasks.runTask
+  args: Documentation
+
 - key: tab
   command: editor.action.triggerSuggest
   when: >-

@@ -1,4 +1,4 @@
-'[ahk2][bat][ini]':
+'[bat][ini]':
   files.eol: "\r\n"
 '[markdown]':
   editor.tabSize: 2
@@ -49,15 +49,9 @@ editor.tokenColorCustomizations:
     - scope: entity.name.tag.yaml
       settings:
         foreground: '#9cdcfe'
-    - scope: entity.source.cmake
-      settings:
-        foreground: '#569cd6'
     - scope: keyword.operator.word.matlab
       settings:
         foreground: '#569cd6'
-    - scope: storage.source.cmake
-      settings:
-        foreground: '#9cdcfe'
     - scope: variable.parameter.function-call.python
       settings:
         foreground: '#6a9955'

@@ -7,6 +7,7 @@ breadcrumbs.enabled: false
 debug.toolBarLocation: commandCenter
 diffEditor.experimental.showMoves: true
 diffEditor.hideUnchangedRegions.enabled: true
+diffEditor.ignoreTrimWhitespace: false
 diffEditor.useInlineViewWhenSpaceIsLimited: false
 editor.acceptSuggestionOnEnter: 'off'
 editor.bracketPairColorization.enabled: false
@@ -76,6 +77,8 @@ files.enableTrash: false
 files.eol: "\n"
 files.hotExit: 'off'
 files.simpleDialog.enable: true
+git.blame.statusBarItem.enabled: true
+git.blame.statusBarItem.template: ${subject}, ${authorName} (${authorDate})
 git.openRepositoryInParentFolders: never
 json.schemaDownload.enable: false
 markdown.preview.doubleClickToSwitchToEditor: false
@@ -90,8 +93,11 @@ search.searchEditor.doubleClickBehaviour: selectWord
 security.workspace.trust.enabled: false
 task.saveBeforeRun: never
 telemetry.telemetryLevel: 'off'
+terminal.integrated.commandsToSkipShell:
+- matlab.interrupt
 typescript.disableAutomaticTypeAcquisition: true
 update.mode: none
+update.showReleaseNotes: false
 window.enableMenuBarMnemonics: false
 window.newWindowDimensions: maximized
 window.openFoldersInNewWindow: 'off'

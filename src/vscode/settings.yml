@@ -32,6 +32,8 @@ editor.semanticTokenColorCustomizations:
       concept:cpp: '#4ec9b0'
       parameter.readonly:c: '#4fc1ff'
       parameter.readonly:cpp: '#4fc1ff'
+      tomlArrayKey:toml: '#9cdcfe'
+      tomlTableKey:toml: '#9cdcfe'
       variable.readonly:c: '#4fc1ff'
       variable.readonly:cpp: '#4fc1ff'
 editor.stickyTabStops: true
@@ -53,6 +55,9 @@ editor.tokenColorCustomizations:
     - scope: keyword.operator.word.matlab
       settings:
         foreground: '#569cd6'
+    - scope: support.type.property-name.table.toml
+      settings:
+        foreground: '#cccccc'
     - scope: variable.parameter.function-call.python
       settings:
         foreground: '#6a9955'
@@ -64,7 +69,10 @@ explorer.fileNesting.expand: false
 explorer.fileNesting.patterns:
   '*.h': ${capture}.c, ${capture}.cc, ${capture}.cpp
   '*.hpp': ${capture}.cpp
-  '*.pyi': ${capture}.pxd, ${capture}.py, ${capture}.pyx
+  '*.py': ${capture}.pxd
+  '_*.py': ${capture}.cpp, ${capture}.def, ${capture}.hpp
+  '*.pyi': ${capture}.py, ${capture}.pyx
+  '*.pyx': ${capture}.pxd
 extensions.ignoreRecommendations: true
 files.associations:
   .clangd: yaml

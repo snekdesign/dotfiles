@@ -76,6 +76,7 @@ explorer.fileNesting.patterns:
   '_*.py': ${capture}.cpp, ${capture}.def, ${capture}.hpp
   '*.pyi': ${capture}.py, ${capture}.pyx
   '*.pyx': ${capture}.pxd
+extensions.autoCheckUpdates: false
 extensions.ignoreRecommendations: true
 files.associations:
   .clangd: yaml

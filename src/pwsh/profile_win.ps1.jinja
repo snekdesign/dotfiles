@@ -1,0 +1,123 @@
+$Env:CARGO_HOME = 'E:\var\cargo'
+$Env:OLLAMA_MODELS = 'E:\var\cache\ollama'
+$Env:PIXI_HOME = 'E:\var\pixi'
+$Env:Path = "$($Env:Path.TrimEnd(';') -replace '/', '\');$Env:PIXI_HOME\bin"
+$Env:RATTLER_CACHE_DIR = 'E:\var\cache\rattler'
+$Env:UV_CONFIG_FILE = 'E:\etc\uv.toml'
+$Env:UV_PYTHON_INSTALL_DIR = 'E:\var\cache\uv\data\python'
+
+$Alias:7z = '{{ _7z.exe|replace("/", "\\") }}'
+$Alias:akelpad = '{{ akelpad.exe|replace("/", "\\") }}'
+$Alias:es = '{{ es.exe|replace("/", "\\") }}'
+$Alias:ffmpeg = '{{ ffmpeg.exe|replace("/", "\\") }}'
+$Alias:ffplay = '{{ ffplay.exe|replace("/", "\\") }}'
+$Alias:ssh = '{{ ssh.exe|replace("/", "\\") }}'
+
+function scp {
+    {{ scp.exe|replace("/", "\\") }} -O @args
+}
+
+if ($PSVersionTable.PSVersion -ge '7.4') {
+    function aria2c {
+        Start-Process `
+            -Environment @{
+                SSL_CERT_DIR = '{{ aria2c.env.SSL_CERT_DIR }}'
+                SSL_CERT_FILE = '{{ aria2c.env.SSL_CERT_FILE }}'
+            } `
+            -NoNewWindow `
+            -Wait `
+            {{ aria2c.exe|replace("/", "\\") }} `
+            $args
+    }
+
+    function code {
+        if (-not $args) {
+            code E:\etc\code
+        } elseif (Get-Process -ErrorAction Ignore VSCodium) {
+            {{ code.env.CONDA_PREFIX }}\Library\opt\vscodium\VSCodium.exe @args
+        } else {
+            Start-Process `
+                -Environment @{
+                    ELECTRON_RUN_AS_NODE = '1'
+                    GIT_SSH_COMMAND = '{{ code.env.GIT_SSH_COMMAND }}'
+                    PATH = '{{ code.path|replace("/", "\\") }}'
+                    SSL_CERT_DIR = '{{ code.env.SSL_CERT_DIR }}'
+                    SSL_CERT_FILE = '{{ code.env.SSL_CERT_FILE }}'
+                } `
+                -NoNewWindow `
+                {{ code.env.CONDA_PREFIX }}\Library\opt\vscodium\VSCodium.exe `
+                (
+                    @(
+                        '{{ code.env.CONDA_PREFIX }}\Library\opt\vscodium\resources\app\out\cli.js'
+                        '--disable-extension'
+                        'vscode.objective-c'
+                    ) + $args
+                )
+        }
+    }
+
+    function git {
+        Start-Process `
+            -Environment @{
+                GIT_SSH_COMMAND = '{{ git.env.GIT_SSH_COMMAND }}'
+                SSL_CERT_DIR = '{{ git.env.SSL_CERT_DIR }}'
+                SSL_CERT_FILE = '{{ git.env.SSL_CERT_FILE }}'
+            } `
+            -NoNewWindow `
+            -Wait `
+            {{ git.exe|replace("/", "\\") }} `
+            $args
+    }
+
+    function nginx {
+        if ($args) {
+            Start-Process `
+                -Environment @{
+                    SSL_CERT_DIR = '{{ nginx.env.SSL_CERT_DIR }}'
+                    SSL_CERT_FILE = '{{ nginx.env.SSL_CERT_FILE }}'
+                } `
+                -NoNewWindow `
+                -Wait `
+                {{ nginx.exe|replace("/", "\\") }} `
+                $args
+        } else {
+            Start-Process `
+                -Environment @{
+                    SSL_CERT_DIR = '{{ nginx.env.SSL_CERT_DIR }}'
+                    SSL_CERT_FILE = '{{ nginx.env.SSL_CERT_FILE }}'
+                } `
+                {{ nginx.exe|replace("/", "\\") }}
+        }
+    }
+
+    function pdftk {
+        Start-Process `
+            -Environment @{
+                JAVA_HOME = '{{ pdftk.env.JAVA_HOME }}'
+            } `
+            -NoNewWindow `
+            -Wait `
+            {{ pdftk.path|replace("/", "\\") }}\java.exe `
+            (
+                @(
+                    '-jar'
+                    '{{ pdftk.env.CONDA_PREFIX }}\Library\share\java\pdftk\pdftk-all.jar'
+                ) + $args
+            )
+    }
+
+    function rattler-build {
+        Start-Process `
+            -Environment @{
+                GIT_SSH_COMMAND = '{{ rattler_build.env.GIT_SSH_COMMAND }}'
+                PATH = '{{ rattler_build.path|replace("/", "\\") }};{{ rattler_build.env.CONDA_PREFIX }}\Library\usr\bin'
+                RATTLER_BUILD_CHANNEL_ALIAS = 'http://127.0.0.1:3000'
+                SSL_CERT_DIR = '{{ rattler_build.env.SSL_CERT_DIR }}'
+                SSL_CERT_FILE = '{{ rattler_build.env.SSL_CERT_FILE }}'
+            } `
+            -NoNewWindow `
+            -Wait `
+            {{ rattler_build.exe|replace("/", "\\") }} `
+            $args
+    }
+}

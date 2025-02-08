@@ -1,0 +1,119 @@
+$help: https://aka.ms/terminal-documentation
+$schema: https://aka.ms/terminal-profiles-schema
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup
+defaultProfile: pwsh
+launchMode: maximized
+windowingBehavior: useAnyExisting
+disabledProfileSources:
+- Windows.Terminal.Azure
+- Windows.Terminal.PowershellCore
+- Windows.Terminal.VisualStudio
+- Windows.Terminal.Wsl
+# compatibility.allowHeadless: true  # Fixed in 1.23.x
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/interaction
+trimPaste: false
+tabSwitcherMode: false
+multiLinePasteWarning: false
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/appearance
+language: en-US
+theme: mica
+confirmCloseAllTabs: false
+newTabMenu:
+- type: profile
+  profile: pwsh
+- type: profile
+  profile: aria2
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/actions
+keybindings:
+- keys: win+sc(41)
+  id: unbound
+
+- keys: ctrl+minus
+  id: unbound
+
+- keys: ctrl+plus
+  id: unbound
+
+- keys: ctrl+w
+  id: Terminal.ClosePane
+
+- keys: ctrl+r
+  id: Terminal.ToggleReadOnlyMode
+
+- keys: ctrl+p
+  id: Terminal.ExportBuffer
+
+- keys: ctrl+f
+  id: Terminal.FindText
+
+- keys: ctrl+b
+  id: Terminal.ToggleBlockSelection
+
+- keys: pgup
+  id: Terminal.ScrollUpPage
+
+- keys: pgdn
+  id: Terminal.ScrollDownPage
+
+{% for i in range(8) %}
+- keys: ctrl+{{ i+1 }}
+  id: Terminal.SwitchToTab{{ i }}
+{% endfor %}
+
+{% for i in range(2) %}
+- keys: alt+{{ i+1 }}
+  id: Terminal.OpenNewTabProfile{{ i }}
+{% endfor %}
+
+{% for i in range(9) %}
+- keys: f{{ i+1 }}
+  id: Terminal.MovePaneToTab{{ i }}
+{% endfor %}
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-general
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-appearance
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-advanced
+profiles:
+  defaults:
+    startingDirectory: E:\tmp
+    icon: null
+    font:
+      face: Consolas
+      size: 10
+    closeOnExit: graceful
+    bellStyle:
+    - window
+    - taskbar
+    # experimental.repositionCursorWithMouse: true
+  list:
+  - name: pwsh
+    commandline: pwsh
+    showMarksOnScrollbar: true
+  - name: aria2
+    commandline: >-
+      {{ aria2c.exe|replace("/", "\\") }}
+      --check-certificate=false
+      --enable-rpc
+    # --async-dns-server=127.0.0.1:53
+
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/themes
+themes:
+- name: mica
+  window:
+    applicationTheme: dark
+    useMica: true
+  tabRow:
+    background: '#00000000'
+  tab:
+    background: terminalBackground
+    iconStyle: hidden
+
+# https://github.com/microsoft/terminal/releases/tag/v1.12.2922.0
+showAdminShield: false
+
+# https://github.com/microsoft/terminal/wiki/Experimental-Shell-Completion-Menu
+# experimental.enableShellCompletionMenu: true

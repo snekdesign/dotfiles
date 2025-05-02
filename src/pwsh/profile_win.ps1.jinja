@@ -3,7 +3,6 @@ $Env:OLLAMA_MODELS = 'E:\var\cache\ollama'
 $Env:PIXI_BUILD_BACKEND_OVERRIDE_ALL = '1'
 $Env:PIXI_HOME = 'E:\var\pixi'
 $Env:Path = "$($Env:Path.TrimEnd(';') -replace '/', '\');$Env:PIXI_HOME\bin"
-$Env:RATTLER_BUILD_CHANNEL_ALIAS = 'http://127.0.0.1:3000'
 $Env:RATTLER_CACHE_DIR = 'E:\var\cache\rattler'
 $Env:UV_CONFIG_FILE = 'E:\etc\uv.toml'
 $Env:UV_PYTHON_INSTALL_DIR = 'E:\var\cache\uv\data\python'
@@ -106,19 +105,5 @@ if ($PSVersionTable.PSVersion -ge '7.4') {
                     '{{ pdftk.env.CONDA_PREFIX }}\Library\share\java\pdftk\pdftk-all.jar'
                 ) + $args
             )
-    }
-
-    function rattler-build {
-        Start-Process `
-            -Environment @{
-                GIT_SSH_COMMAND = '{{ rattler_build.env.GIT_SSH_COMMAND }}'
-                PATH = '{{ rattler_build.path|replace("/", "\\") }};{{ rattler_build.env.CONDA_PREFIX }}\Library\usr\bin'
-                SSL_CERT_DIR = '{{ rattler_build.env.SSL_CERT_DIR }}'
-                SSL_CERT_FILE = '{{ rattler_build.env.SSL_CERT_FILE }}'
-            } `
-            -NoNewWindow `
-            -Wait `
-            {{ rattler_build.exe|replace("/", "\\") }} `
-            $args
     }
 }

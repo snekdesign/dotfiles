@@ -1,5 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
+$Env:UV_HTTP_TIMEOUT = '300'
+
 function c {
     Clear-History
     [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory()

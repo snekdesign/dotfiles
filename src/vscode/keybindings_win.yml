@@ -35,6 +35,9 @@
 - key: ctrl+shift+d
   command: editor.action.selectHighlights
 
+- key: ctrl+c
+  command: -matlab.interrupt
+
 - key: ctrl+shift+c
   command: copyFilePath
 

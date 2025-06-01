@@ -1,11 +1,11 @@
 $Env:CARGO_HOME = 'E:\var\cargo'
 $Env:OLLAMA_MODELS = 'E:\var\cache\ollama'
-$Env:PIXI_BUILD_BACKEND_OVERRIDE_ALL = '1'
 $Env:PIXI_HOME = 'E:\var\pixi'
 $Env:Path = "$($Env:Path.TrimEnd(';') -replace '/', '\');$Env:PIXI_HOME\bin"
 $Env:RATTLER_CACHE_DIR = 'E:\var\cache\rattler'
 $Env:UV_CONFIG_FILE = 'E:\etc\uv.toml'
-$Env:UV_PYTHON_INSTALL_DIR = 'E:\var\cache\uv\data\python'
+$Env:UV_PYTHON_INSTALL_DIR = 'E:\var\cache\uv\python\install'
+$Env:UV_TOOL_DIR = 'E:\var\cache\uv\tool'
 
 $Alias:7z = '{{ _7z.exe|replace("/", "\\") }}'
 $Alias:akelpad = '{{ akelpad.exe|replace("/", "\\") }}'
@@ -13,9 +13,14 @@ $Alias:es = '{{ es.exe|replace("/", "\\") }}'
 $Alias:ffmpeg = '{{ ffmpeg.exe|replace("/", "\\") }}'
 $Alias:ffplay = '{{ ffplay.exe|replace("/", "\\") }}'
 $Alias:ssh = '{{ ssh.exe|replace("/", "\\") }}'
+$Alias:uv = '{{ uv.exe|replace("/", "\\") }}'
 
 function scp {
     {{ scp.exe|replace("/", "\\") }} -O @args
+}
+
+function uvx {
+    {{ uv.exe|replace("/", "\\") }} tool run @args
 }
 
 if ($PSVersionTable.PSVersion -ge '7.4') {
@@ -55,19 +60,6 @@ if ($PSVersionTable.PSVersion -ge '7.4') {
                     ) + $args
                 )
         }
-    }
-
-    function git {
-        Start-Process `
-            -Environment @{
-                GIT_SSH_COMMAND = '{{ git.env.GIT_SSH_COMMAND }}'
-                SSL_CERT_DIR = '{{ git.env.SSL_CERT_DIR }}'
-                SSL_CERT_FILE = '{{ git.env.SSL_CERT_FILE }}'
-            } `
-            -NoNewWindow `
-            -Wait `
-            {{ git.exe|replace("/", "\\") }} `
-            $args
     }
 
     function nginx {

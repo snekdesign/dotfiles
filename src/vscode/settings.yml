@@ -68,6 +68,7 @@ editor.tokenColorCustomizations:
     - scope: variable.parameter.function-call.python
       settings:
         foreground: '#6a9955'
+evenBetterToml.schema.enabled: false
 explorer.autoReveal: false
 explorer.confirmDelete: false
 explorer.copyRelativePathSeparator: /

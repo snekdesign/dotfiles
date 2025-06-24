@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
+$Env:PIXI_BUILD_BACKEND_OVERRIDE_ALL = '1'
 $Env:UV_HTTP_TIMEOUT = '300'
 
 function c {

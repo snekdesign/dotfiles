@@ -30,9 +30,11 @@ editor.semanticTokenColorCustomizations:
   '[Default Dark Modern]':
     enabled: true
     rules:
+      clsParameter:python: '#569cd6'
       concept:cpp: '#4ec9b0'
       parameter.readonly:c: '#4fc1ff'
       parameter.readonly:cpp: '#4fc1ff'
+      selfParameter:python: '#569cd6'
       tomlArrayKey:toml: '#9cdcfe'
       tomlTableKey:toml: '#9cdcfe'
       variable.readonly:c: '#4fc1ff'

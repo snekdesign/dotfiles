@@ -1,16 +1,19 @@
 SHELL = /bin/sh
 
 .PHONY : all
-all : \
-	build/pwsh/profile.ps1 \
-	build/vscode/keybindings.json \
-	build/vscode/settings.json \
-	build/vscode/tasks.json \
-	build/wt/settings.json
+all : build/all.tar.gz
 
 .PHONY : clean
 clean :
 	rm -r build
+
+build/all.tar.gz : \
+		build/pwsh/profile.ps1 \
+		build/vscode/keybindings.json \
+		build/vscode/settings.json \
+		build/vscode/tasks.json \
+		build/wt/settings.json
+	tar -cf $@ build/*/*
 
 build/pwsh/profile.ps1 :
 	mkdir -p build/pwsh

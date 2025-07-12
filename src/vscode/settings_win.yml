@@ -1,6 +1,6 @@
 '[plaintext][powershell]':
   files.eol: "\r\n"
-editor.experimentalEditContextEnabled: false
+editor.editContext: false
 editor.fontFamily: Microsoft YaHei
 files.dialog.defaultPath: E:\tmp
 MATLAB.installPath: C:\Program Files\MATLAB\R2024b

@@ -58,6 +58,7 @@
   args:
     commands:
     - outline.removeView
+    - workbench.action.closeAuxiliaryBar
     - workbench.explorer.openEditorsView.toggleVisibility
   when: >-
     activeViewlet == workbench.view.explorer

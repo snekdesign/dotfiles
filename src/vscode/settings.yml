@@ -87,9 +87,6 @@ extensions.autoUpdate: false
 extensions.ignoreRecommendations: true
 files.associations:
   .clangd: yaml
-  .condarc: yaml
-  .mambarc: yaml
-  history: diff
   pixi.lock: yaml
 files.defaultLanguage: ${activeEditorLanguage}
 files.enableTrash: false

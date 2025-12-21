@@ -14,7 +14,13 @@
 - key: ctrl+=
   command: -workbench.action.zoomIn
 
+- key: ctrl+shift+=
+  command: -workbench.action.zoomIn
+
 - key: ctrl+-
+  command: -workbench.action.zoomOut
+
+- key: ctrl+shift+-
   command: -workbench.action.zoomOut
 
 - key: ctrl+shift+delete
@@ -41,18 +47,6 @@
 - key: ctrl+shift+c
   command: copyFilePath
 
-- key: ctrl+shift+v
-  command: runCommands
-  args:
-    commands:
-    - command: simpleBrowser.show
-      args: http://localhost:8000/
-    - workbench.action.moveEditorToNextGroup
-  when: >-
-    editorLangId == markdown
-    && !notebookEditorFocused
-    && !multipleEditorGroups
-
 - key: ctrl+m
   command: runCommands
   args:
@@ -63,6 +57,12 @@
   when: >-
     activeViewlet == workbench.view.explorer
     && !view.workbench.explorer.openEditorsView.visible
+
+- key: ctrl+numpad_add
+  command: -workbench.action.zoomIn
+
+- key: ctrl+numpad_subtract
+  command: -workbench.action.zoomOut
 
 - key: alt+u
   command: editor.action.transformToUppercase

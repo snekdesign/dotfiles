@@ -46,18 +46,18 @@ editor.tabCompletion: 'on'
 editor.tokenColorCustomizations:
   '[Default Dark Modern]':
     textMateRules:
-    - scope: constant.language.boolean.matlab
-      settings:
-        foreground: '#dcdcaa'
-    - scope: constant.language.nan.matlab
-      settings:
-        foreground: '#dcdcaa'
+    # - scope: constant.language.boolean.matlab
+    #   settings:
+    #     foreground: '#dcdcaa'
+    # - scope: constant.language.nan.matlab
+    #   settings:
+    #     foreground: '#dcdcaa'
     - scope: entity.name.tag.yaml
       settings:
         foreground: '#9cdcfe'
-    - scope: keyword.operator.word.matlab
-      settings:
-        foreground: '#569cd6'
+    # - scope: keyword.operator.word.matlab
+    #   settings:
+    #     foreground: '#569cd6'
     - scope: support.constant.variable.powershell
       settings:
         foreground: '#4fc1ff'
@@ -99,7 +99,7 @@ git.openRepositoryInParentFolders: never
 json.schemaDownload.enable: false
 markdown.preview.doubleClickToSwitchToEditor: false
 markdown.preview.openMarkdownLinks: inEditor
-MATLAB.telemetry: false
+# MATLAB.telemetry: false
 outline.icons: false
 python.terminal.activateEnvironment: false
 search.mode: newEditor
@@ -109,8 +109,8 @@ search.searchEditor.doubleClickBehaviour: selectWord
 security.workspace.trust.enabled: false
 task.saveBeforeRun: never
 telemetry.telemetryLevel: 'off'
-terminal.integrated.commandsToSkipShell:
-- matlab.interrupt
+# terminal.integrated.commandsToSkipShell:
+# - matlab.interrupt
 typescript.disableAutomaticTypeAcquisition: true
 update.mode: none
 update.showReleaseNotes: false

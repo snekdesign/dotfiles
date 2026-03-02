@@ -12,7 +12,9 @@ build/all.tar.gz : \
 		build/vscode/keybindings.json \
 		build/vscode/settings.json \
 		build/vscode/tasks.json \
-		build/wt/settings.json
+		build/wt/settings.json \
+		build/zed/keymap.json \
+		build/zed/settings.json
 	tar -cf $@ build/*/*
 
 build/pwsh/profile.ps1 :
@@ -38,4 +40,14 @@ build/vscode/tasks.json :
 build/wt/settings.json :
 	mkdir -p build/wt
 	python scripts/mj.py src/wt/settings.yml.jinja \
+		| yq -py -oj -I4 > $@
+
+build/zed/keymap.json :
+	mkdir -p build/zed
+	cat src/zed/keymap.yml src/zed/keymap_win.yml \
+		| yq -py -oj -I4 > $@
+
+build/zed/settings.json :
+	mkdir -p build/zed
+	cat src/zed/settings.yml src/zed/settings_win.yml \
 		| yq -py -oj -I4 > $@

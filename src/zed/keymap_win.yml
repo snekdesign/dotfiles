@@ -1,0 +1,22 @@
+- bindings:
+    ctrl-q: project_panel::ToggleFocus
+    alt-d: command_palette::Toggle
+- context: Editor
+  bindings:
+    ctrl-u: editor::RevealInFileManager
+    alt-u: editor::ConvertToUpperCase
+    alt-p: editor::ConvertToUpperCamelCase
+    alt-s: editor::ConvertToSnakeCase
+    alt-j: editor::JoinLines
+    alt-l: editor::ConvertToLowerCase
+    alt-c: editor::ConvertToLowerCamelCase
+- context: '!Terminal'
+  bindings:
+    ctrl-shift-c: workspace::CopyRelativePath
+- context: Workspace
+  bindings:
+    ctrl-shift-e: workspace::OpenFiles
+    ctrl-r: workspace::Reload
+    ctrl-t: workspace::NewFile
+    ctrl-shift-d: editor::SelectAllMatches
+    alt-enter: dev::OpenHighlightsTreeView

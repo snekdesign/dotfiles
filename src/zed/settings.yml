@@ -1,0 +1,81 @@
+agent:
+  button: false
+auto_update: false
+buffer_font_size: 14.0
+buffer_line_height: standard
+collaboration_panel:
+  button: false
+debugger:
+  button: false
+diagnostics:
+  button: false
+disable_ai: true
+edit_predictions:
+  provider: none
+format_on_save: 'off'
+git_panel:
+  button: false
+global_lsp_settings:
+  semantic_token_rules:
+  - token_type: concept
+    style: [class]
+  - token_type: decorator
+    style: [function]
+  - token_type: macro
+    foreground_color: '#569cd6'
+  - token_type: parameter
+    token_modifiers: [readonly]
+    foreground_color: '#4fc1ff'
+  - token_type: table
+    style: [operator]
+  - token_type: variable
+    token_modifiers: [readonly]
+    foreground_color: '#4fc1ff'
+languages:
+  CMake:
+    enable_language_server: false
+  CSS:
+    enable_language_server: false
+  Rust:
+    enable_language_server: false
+  YAML:
+    enable_language_server: false
+notification_panel:
+  button: false
+outline_panel:
+  button: false
+preview_tabs:
+  enabled: false
+project_panel:
+  button: false
+  entry_spacing: standard
+  folder_icons: false
+  hide_gitignore: true
+restore_on_startup: last_workspace
+rounded_selection: false
+scroll_beyond_last_line: 'off'
+search:
+  button: false
+semantic_tokens: combined
+session:
+  trust_all_worktrees: true
+status_bar:
+  active_encoding_button: enabled
+tab_bar:
+  show_nav_history_buttons: false
+  show_tab_bar_buttons: false
+telemetry:
+  diagnostics: false
+  metrics: false
+terminal:
+  button: false
+theme: VSCode Dark Modern
+title_bar:
+  show_onboarding_banner: false
+  show_sign_in: false
+toolbar:
+  agent_review: false
+ui_font_size: 14.0
+use_system_path_prompts: false
+use_system_prompts: false
+when_closing_with_no_tabs: close_window

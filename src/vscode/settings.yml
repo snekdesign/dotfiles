@@ -35,8 +35,7 @@ editor.semanticTokenColorCustomizations:
       parameter.readonly:c: '#4fc1ff'
       parameter.readonly:cpp: '#4fc1ff'
       selfParameter:python: '#569cd6'
-      tomlArrayKey:toml: '#9cdcfe'
-      tomlTableKey:toml: '#9cdcfe'
+      table:toml: '#cccccc'
       variable.readonly:c: '#4fc1ff'
       variable.readonly:cpp: '#4fc1ff'
 editor.stickyTabStops: true
@@ -61,16 +60,9 @@ editor.tokenColorCustomizations:
     - scope: support.constant.variable.powershell
       settings:
         foreground: '#4fc1ff'
-    - scope: support.type.property-name.array.toml
-      settings:
-        foreground: '#cccccc'
-    - scope: support.type.property-name.table.toml
-      settings:
-        foreground: '#cccccc'
     - scope: variable.parameter.function-call.python
       settings:
         foreground: '#6a9955'
-evenBetterToml.schema.enabled: false
 explorer.autoReveal: false
 explorer.confirmDelete: false
 explorer.copyRelativePathSeparator: /

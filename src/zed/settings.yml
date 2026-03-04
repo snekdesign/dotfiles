@@ -36,6 +36,10 @@ languages:
     enable_language_server: false
   CSS:
     enable_language_server: false
+  JavaScript:
+    enable_language_server: false
+  JSON:
+    enable_language_server: false
   Rust:
     enable_language_server: false
   YAML:

@@ -10,6 +10,9 @@
     alt-j: editor::JoinLines
     alt-l: editor::ConvertToLowerCase
     alt-c: editor::ConvertToLowerCamelCase
+- context: (Editor && mode == full)
+  bindings:
+    alt-enter: dev::OpenHighlightsTreeView
 - context: '!Terminal'
   bindings:
     ctrl-shift-c: workspace::CopyRelativePath
@@ -19,4 +22,3 @@
     ctrl-r: workspace::Reload
     ctrl-t: workspace::NewFile
     ctrl-shift-d: editor::SelectAllMatches
-    alt-enter: dev::OpenHighlightsTreeView

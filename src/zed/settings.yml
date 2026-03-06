@@ -74,6 +74,13 @@ telemetry:
 terminal:
   button: false
 theme: VSCode Dark Modern
+theme_overrides:
+  VSCode Dark Modern:
+    syntax:
+      attribute:
+        color: '#4ec9b0'
+      preproc:
+        color: '#c586c0'
 title_bar:
   show_onboarding_banner: false
   show_sign_in: false

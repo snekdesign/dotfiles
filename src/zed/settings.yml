@@ -44,6 +44,11 @@ languages:
     enable_language_server: false
   YAML:
     enable_language_server: false
+lsp:
+  tombi:
+    binary:
+      path: tombi
+      arguments: [lsp]
 notification_panel:
   button: false
 outline_panel:

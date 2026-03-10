@@ -1,6 +1,15 @@
 $ErrorActionPreference = 'Stop'
 
 $Env:PIXI_BUILD_BACKEND_OVERRIDE_ALL = '1'
+{%- if environ.QUETZ_API_KEY %}
+$Env:QUETZ_API_KEY = '{{ environ.QUETZ_API_KEY }}'
+{%- endif %}
+{%- if environ.QUETZ_CHANNEL %}
+$Env:QUETZ_CHANNEL = '{{ environ.QUETZ_CHANNEL }}'
+{%- endif %}
+{%- if environ.QUETZ_SERVER_URL %}
+$Env:QUETZ_SERVER_URL = '{{ environ.QUETZ_SERVER_URL }}'
+{%- endif %}
 $Env:UV_HTTP_TIMEOUT = '60'
 
 function c {

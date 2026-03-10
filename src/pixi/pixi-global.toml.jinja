@@ -1,0 +1,209 @@
+version = 1
+
+[envs.7z]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { 7max = '*', 7zz = '*' }
+exposed = { 7z = '7zz' }
+
+[envs.akelpad]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { akelpad = '*' }
+exposed = { akelpad = 'AkelPad' }
+
+[envs.aria2]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { aria2 = '*' }
+exposed = { aria2c = 'aria2c' }
+
+[envs.code]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+exposed = { code = 'codium', git = 'git' }
+
+[envs.code.dependencies]
+clang-tools = '>=22.1.0'
+cmake = '>=4.2.0'
+git = '*'
+git-lfs = '*'
+openssh = '*'
+vscode-pyright = '*'
+vscodium-conda-launcher = '*'
+
+[envs.crates-io-proxy]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { crates-io-proxy = '*' }
+exposed = { crates-io-proxy = 'crates-io-proxy' }
+
+[envs.es]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { everything-cli = '*' }
+exposed = { es = 'es' }
+
+[envs.ffmpeg]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { ffmpeg = '*' }
+exposed = { ffmpeg = 'ffmpeg', ffplay = 'ffplay' }
+
+[envs.nginx]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { nginx = '*' }
+exposed = { nginx = 'nginx' }
+
+[envs.pdftk]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { pdftk = '*' }
+exposed = { pdftk = 'pdftk' }
+
+[envs.pixi]
+channels = ['conda-forge']
+platform = 'win-64'
+dependencies = { pixi = '>=0.63.0' }
+exposed = { pixi = 'pixi' }
+
+[envs.pixi-build-cmake]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { pixi-build-cmake = '*' }
+exposed = { pixi-build-cmake = 'pixi-build-cmake' }
+
+[envs.pixi-build-python]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { pixi-build-python = '*' }
+exposed = { pixi-build-python = 'pixi-build-python' }
+
+[envs.pixi-build-rattler-build]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { pixi-build-rattler-build = '*' }
+exposed = { pixi-build-rattler-build = 'pixi-build-rattler-build' }
+
+[envs.pixi-build-rust]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { pixi-build-rust = '*' }
+exposed = { pixi-build-rust = 'pixi-build-rust' }
+
+[envs.scc]
+channels = ['https://prefix.dev/github-releases']
+platform = 'win-64'
+dependencies = { scc = '*' }
+exposed = { scc = 'scc' }
+
+[envs.ssh]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { openssh = '*' }
+exposed = { scp = 'scp', ssh = 'ssh' }
+
+[envs.sumatrapdf]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { sumatrapdf = '*' }
+exposed = { sumatrapdf = 'SumatraPDF' }
+
+[envs.uv]
+channels = ['conda-forge']
+platform = 'win-64'
+dependencies = { uv = '>=0.10.0' }
+exposed = { uv = 'uv' }
+
+[envs.zed]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+exposed = { zed = 'zed' }
+
+[envs.zed.dependencies]
+basedpyright = '*'
+clang-tools = '>=22.1.0'
+ruff = '*'
+tombi = '*'
+zed = '*'

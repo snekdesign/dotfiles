@@ -8,6 +8,7 @@ clean :
 	rm -r build
 
 build/all.tar.gz : \
+		build/pixi/pixi-global.toml \
 		build/pwsh/profile.ps1 \
 		build/vscode/keybindings.json \
 		build/vscode/settings.json \
@@ -17,9 +18,14 @@ build/all.tar.gz : \
 		build/zed/settings.json
 	tar -cf $@ build/*/*
 
+build/pixi/pixi-global.toml :
+	mkdir -p build/pixi
+	python scripts/mj.py src/pixi/pixi-global.toml.jinja \
+		> $@
+
 build/pwsh/profile.ps1 :
 	mkdir -p build/pwsh
-	python scripts/mj.py src/pwsh/profile.ps1 src/pwsh/profile_win.ps1.jinja \
+	python scripts/mj.py src/pwsh/profile.ps1.jinja src/pwsh/profile_win.ps1.jinja \
 		> $@
 
 build/vscode/keybindings.json :

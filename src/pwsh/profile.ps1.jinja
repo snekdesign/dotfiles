@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
+$Env:MATURIN_NO_INSTALL_RUST = '1'
 $Env:PIXI_BUILD_BACKEND_OVERRIDE_ALL = '1'
 {%- if environ.QUETZ_API_KEY %}
 $Env:QUETZ_API_KEY = '{{ environ.QUETZ_API_KEY }}'

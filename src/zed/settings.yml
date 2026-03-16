@@ -70,6 +70,7 @@ session:
   trust_all_worktrees: true
 status_bar:
   active_encoding_button: enabled
+  line_endings_button: true
 tab_bar:
   show_nav_history_buttons: false
   show_tab_bar_buttons: false

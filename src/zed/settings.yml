@@ -23,14 +23,8 @@ global_lsp_settings:
     style: [function]
   - token_type: macro
     foreground_color: '#569cd6'
-  - token_type: parameter
-    token_modifiers: [readonly]
-    foreground_color: '#4fc1ff'
   - token_type: table
     style: [operator]
-  - token_type: variable
-    token_modifiers: [readonly]
-    foreground_color: '#4fc1ff'
 languages:
   CMake:
     enable_language_server: false
@@ -39,8 +33,6 @@ languages:
   JavaScript:
     enable_language_server: false
   JSON:
-    enable_language_server: false
-  Rust:
     enable_language_server: false
   YAML:
     enable_language_server: false

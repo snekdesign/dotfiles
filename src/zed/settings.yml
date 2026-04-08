@@ -12,6 +12,8 @@ diagnostics:
 disable_ai: true
 edit_predictions:
   provider: none
+file_types:
+  JavaScript: ['*.as']
 format_on_save: 'off'
 git_panel:
   button: false

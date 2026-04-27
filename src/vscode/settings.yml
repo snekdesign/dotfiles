@@ -27,7 +27,7 @@ editor.quickSuggestions:
 editor.roundedSelection: false
 editor.scrollBeyondLastLine: false
 editor.semanticTokenColorCustomizations:
-  '[Default Dark Modern]':
+  '[Dark Modern]':
     enabled: true
     rules:
       clsParameter:python: '#569cd6'
@@ -112,6 +112,7 @@ window.openFoldersInNewWindow: 'off'
 window.openWithoutArgumentsInNewWindow: 'off'
 window.restoreWindows: none
 workbench.activityBar.location: hidden
+workbench.colorTheme: Dark Modern
 workbench.commandPalette.history: 0
 workbench.editor.empty.hint: hidden
 workbench.editor.enablePreview: false

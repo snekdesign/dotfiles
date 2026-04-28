@@ -43,7 +43,7 @@ editor.suggest.localityBonus: true
 editor.suggestSelection: first
 editor.tabCompletion: 'on'
 editor.tokenColorCustomizations:
-  '[Default Dark Modern]':
+  '[Dark Modern]':
     textMateRules:
     # - scope: constant.language.boolean.matlab
     #   settings:

@@ -1,5 +1,9 @@
 agent:
   button: false
+auto_install_extensions:
+  html: false
+auto_update_extensions:
+  tombi: false  # https://github.com/tombi-toml/tombi/issues/1824
 auto_update: false
 buffer_font_size: 14.0
 buffer_line_height: standard
@@ -38,13 +42,12 @@ languages:
     enable_language_server: false
   YAML:
     enable_language_server: false
+line_ending: prefer_lf
 lsp:
   tombi:
     binary:
       path: tombi
       arguments: [lsp]
-notification_panel:
-  button: false
 outline_panel:
   button: false
 preview_tabs:

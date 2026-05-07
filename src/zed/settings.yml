@@ -9,6 +9,7 @@ buffer_font_size: 14.0
 buffer_line_height: standard
 collaboration_panel:
   button: false
+  dock: left
 debugger:
   button: false
 diagnostics:
@@ -21,6 +22,7 @@ file_types:
 format_on_save: 'off'
 git_panel:
   button: false
+  dock: left
 global_lsp_settings:
   semantic_token_rules:
   - token_type: concept
@@ -50,10 +52,12 @@ lsp:
       arguments: [lsp]
 outline_panel:
   button: false
+  dock: left
 preview_tabs:
   enabled: false
 project_panel:
   button: false
+  dock: left
   entry_spacing: standard
   folder_icons: false
   hide_gitignore: true

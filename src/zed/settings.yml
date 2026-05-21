@@ -42,6 +42,8 @@ languages:
     enable_language_server: false
   JSON:
     enable_language_server: false
+  JSONC:
+    enable_language_server: false
   YAML:
     enable_language_server: false
 line_ending: prefer_lf

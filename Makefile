@@ -13,6 +13,7 @@ build/all.tar.gz : \
 		build/vscode/keybindings.json \
 		build/vscode/settings.json \
 		build/vscode/tasks.json \
+		build/windows/settings.reg \
 		build/wt/settings.json \
 		build/zed/keymap.json \
 		build/zed/settings.json
@@ -35,13 +36,18 @@ build/vscode/keybindings.json :
 
 build/vscode/settings.json :
 	mkdir -p build/vscode
-	cat src/vscode/settings.yml src/vscode/settings_win.yml \
+	python scripts/mj.py src/vscode/settings.yml src/vscode/settings_win.yml.jinja \
 		| yq -py -oj -I4 > $@
 
 build/vscode/tasks.json :
 	mkdir -p build/vscode
 	cat src/vscode/tasks.yml src/vscode/tasks_win.yml \
 		| yq -py -oj -I4 > $@
+
+build/windows/settings.reg :
+	mkdir -p build/windows
+	python scripts/mj.py --output-encoding utf-16 src/windows/settings.reg.jinja \
+		> $@
 
 build/wt/settings.json :
 	mkdir -p build/wt

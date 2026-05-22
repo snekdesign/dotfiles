@@ -87,7 +87,9 @@ keybindings:
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-advanced
 profiles:
   defaults:
+{%- if pixi_home is startingwith "D:\\" %}
     startingDirectory: D:\Public
+{%- endif %}
     icon: null
     font:
       face: Consolas

@@ -1,10 +1,14 @@
+{%- if pixi_home is startingwith "D:\\" %}
 $Env:CARGO_HOME = 'D:\.cargo'
-$Env:PIXI_HOME = 'D:\.pixi'
+$Env:PIXI_HOME = '{{ pixi_home }}'
 $Env:Path = "$($Env:Path.TrimEnd(';') -replace '/', '\');$Env:PIXI_HOME\bin"
 $Env:RATTLER_CACHE_DIR = 'D:\.cache\rattler\cache'
 $Env:UV_CONFIG_FILE = 'D:\.config\uv\uv.toml'
 $Env:UV_PYTHON_INSTALL_DIR = 'D:\.local\share\uv\python'
 $Env:UV_TOOL_DIR = 'D:\.local\share\uv\tools'
+{%- else %}
+$Env:Path = "$($Env:Path.TrimEnd(';') -replace '/', '\');{{ pixi_home }}\bin"
+{%- endif %}
 
 $Alias:7z = '{{ _7z.exe|replace("/", "\\") }}'
 $Alias:akelpad = '{{ akelpad.exe|replace("/", "\\") }}'

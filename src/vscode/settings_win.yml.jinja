@@ -2,7 +2,9 @@
   files.eol: "\r\n"
 editor.editContext: false
 editor.fontFamily: Microsoft YaHei
-files.dialog.defaultPath: E:\tmp
+{%- if pixi_home is startingwith "D:\\" %}
+files.dialog.defaultPath: D:\Public
+{%- endif %}
 # MATLAB.installPath: C:\Program Files\MATLAB\R2024b
 # terminal.integrated.defaultProfile.windows: MATLAB
 terminal.integrated.fontFamily: yaco618

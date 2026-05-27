@@ -30,7 +30,7 @@ def main():
                 raise ValueError(p.stem)
         context[k] = json.loads(p.read_text('utf-8'))
     context['vscodium_escaped'] = os.path.dirname(
-        context['code']['path'],
+        os.path.dirname(context['code']['exe']),
     ).replace('/', '\\').replace('\\', r'\\')
 
     with fileinput.FileInput(args.templates, encoding='utf-8') as f:

@@ -156,6 +156,17 @@ platform = 'win-64'
 dependencies = { pixi-build-rust = '*' }
 exposed = { pixi-build-rust = 'pixi-build-rust' }
 
+[envs.ruffle]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { ruffle = '*' }
+exposed = { ruffle = 'ruffle' }
+
 [envs.scc]
 channels = ['https://prefix.dev/github-releases']
 platform = 'win-64'
@@ -164,10 +175,10 @@ exposed = { scc = 'scc' }
 
 [envs.servo]
 channels = [
-    'conda-forge',
 {%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
     '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
 {%- endif %}
+    'conda-forge',
 ]
 platform = 'win-64'
 dependencies = { servo = '*' }

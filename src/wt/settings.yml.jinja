@@ -89,6 +89,8 @@ profiles:
   defaults:
 {%- if pixi_home is startingwith "D:\\" %}
     startingDirectory: D:\Public
+{%- else %}
+    startingDirectory: %USERPROFILE%
 {%- endif %}
     icon: null
     font:

@@ -1,7 +1,33 @@
 SHELL = /bin/sh
 
+PIXI_HOME ?= $(USERPROFILE)/.pixi
+
 .PHONY : all
 all : build/all.tar.gz
+
+.PHONY : install
+install : \
+		build/pixi/pixi-global.toml \
+		build/pwsh/profile.ps1 \
+		build/vscode/keybindings.json \
+		build/vscode/settings.json \
+		build/vscode/tasks.json \
+		build/wt/settings.json \
+		build/zed/keymap.json \
+		build/zed/settings.json
+	mkdir -p \
+		$(PIXI_HOME)/manifests \
+		$(USERPROFILE)/Documents/PowerShell \
+		$(USERPROFILE)/Documents/WindowsPowerShell \
+		$(APPDATA)/VSCodium/User \
+		$(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState \
+		$(APPDATA)/Zed
+	cp -f build/pixi/pixi-global.toml $(PIXI_HOME)/manifests
+	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/PowerShell
+	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/WindowsPowerShell
+	cp -f build/vscode/*.json $(subst \,/,$(APPDATA))/VSCodium/User
+	cp -f build/wt/settings.json $(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+	cp -f build/zed/*.json $(subst \,/,$(APPDATA))/Zed
 
 .PHONY : clean
 clean :

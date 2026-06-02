@@ -3,11 +3,11 @@
 - pixi
 ## Build
 ```sh
-pixi run make
+pixi r make
 ```
 ## Install
 ```sh
-pixi run make install
+pixi r make clean install
 ```
 ## License
 See [LICENSE](LICENSE)

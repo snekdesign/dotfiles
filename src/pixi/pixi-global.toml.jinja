@@ -74,6 +74,17 @@ platform = 'win-64'
 dependencies = { everything-cli = '*' }
 exposed = { es = 'es' }
 
+[envs.ffdec]
+channels = [
+{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
+    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
+{%- endif %}
+    'conda-forge',
+]
+platform = 'win-64'
+dependencies = { ffdec = '*' }
+exposed = { ffdec = 'ffdec' }
+
 [envs.ffmpeg]
 channels = [
 {%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}

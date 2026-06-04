@@ -33,6 +33,9 @@ global_lsp_settings:
     foreground_color: '#569cd6'
   - token_type: table
     style: [operator]
+  - token_type: variable
+    token_modifiers: [readonly]
+    style: [constant]
 languages:
   CMake:
     enable_language_server: false

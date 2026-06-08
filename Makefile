@@ -7,6 +7,7 @@ all : build/all.tar.gz
 
 .PHONY : install
 install : \
+		build/git/config \
 		build/pixi/pixi-global.toml \
 		build/pwsh/profile.ps1 \
 		build/vscode/keybindings.json \
@@ -16,12 +17,14 @@ install : \
 		build/zed/keymap.json \
 		build/zed/settings.json
 	mkdir -p \
+		$(USERPROFILE)/.config/git \
 		$(PIXI_HOME)/manifests \
 		$(USERPROFILE)/Documents/PowerShell \
 		$(USERPROFILE)/Documents/WindowsPowerShell \
 		$(APPDATA)/VSCodium/User \
 		$(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState \
 		$(APPDATA)/Zed
+	cp -f build/git/config $(USERPROFILE)/.config/git
 	cp -f build/pixi/pixi-global.toml $(PIXI_HOME)/manifests
 	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/PowerShell
 	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/WindowsPowerShell
@@ -34,6 +37,7 @@ clean :
 	rm -r build
 
 build/all.tar.gz : \
+		build/git/config \
 		build/pixi/pixi-global.toml \
 		build/pwsh/profile.ps1 \
 		build/vscode/keybindings.json \
@@ -44,6 +48,11 @@ build/all.tar.gz : \
 		build/zed/keymap.json \
 		build/zed/settings.json
 	tar -cf $@ build/*/*
+
+build/git/config :
+	mkdir -p build/git
+	python scripts/mj.py src/git/config.jinja \
+		> $@
 
 build/pixi/pixi-global.toml :
 	mkdir -p build/pixi

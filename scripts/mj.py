@@ -37,6 +37,8 @@ def main():
         output_text = minijinja.render_str(''.join(f), **context)
     if args.output_encoding:
         sys.stdout.reconfigure(encoding=args.output_encoding)
+    else:
+        sys.stdout.reconfigure(newline='')
     print(output_text)
 
 

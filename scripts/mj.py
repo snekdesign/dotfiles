@@ -3,6 +3,7 @@ import fileinput
 import json
 import os
 import pathlib
+import platform
 import sys
 
 import minijinja
@@ -32,6 +33,10 @@ def main():
     context['vscodium_escaped'] = os.path.dirname(
         os.path.dirname(context['code']['exe']),
     ).replace('/', '\\').replace('\\', r'\\')
+    if sys.platform == 'win32':
+        build = int(platform.win32_ver()[1].split('.')[2])
+        # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/themes#mica
+        context['use_mica'] = build >= 22621
 
     with fileinput.FileInput(args.templates, encoding='utf-8') as f:
         output_text = minijinja.render_str(''.join(f), **context)

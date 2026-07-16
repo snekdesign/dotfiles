@@ -83,6 +83,11 @@ files.associations:
 files.defaultLanguage: ${activeEditorLanguage}
 files.enableTrash: false
 files.eol: "\n"
+files.exclude:
+  '**/.hypothesis': true
+  '**/.pixi': true
+  '**/.pytest_cache': true
+  '**/.ruff_cache': true
 files.hotExit: 'off'
 files.simpleDialog.enable: true
 git.blame.statusBarItem.enabled: true

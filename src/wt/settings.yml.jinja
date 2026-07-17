@@ -11,7 +11,9 @@ disabledProfileSources:
 - Windows.Terminal.PowershellCore
 - Windows.Terminal.VisualStudio
 - Windows.Terminal.Wsl
+{%- if use_mica %}
 compatibility.allowHeadless: true
+{%- endif %}
 
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/interaction
 trimPaste: false
@@ -121,7 +123,11 @@ themes:
     useMica: true
 {%- endif %}
   tabRow:
+{%- if use_mica %}
     background: '#00000000'
+{%- else %}
+    background: '#000000'
+{%- endif %}
   tab:
     background: terminalBackground
     iconStyle: hidden

@@ -93,6 +93,7 @@ files.simpleDialog.enable: true
 git.blame.statusBarItem.enabled: true
 git.blame.statusBarItem.template: ${subject}, ${authorName} (${authorDate})
 git.openRepositoryInParentFolders: never
+js/ts.tsserver.automaticTypeAcquisition.enabled: false
 json.schemaDownload.enable: false
 markdown.preview.doubleClickToSwitchToEditor: false
 markdown.preview.openMarkdownLinks: inEditor
@@ -108,7 +109,6 @@ task.saveBeforeRun: never
 telemetry.telemetryLevel: 'off'
 # terminal.integrated.commandsToSkipShell:
 # - matlab.interrupt
-typescript.disableAutomaticTypeAcquisition: true
 update.mode: none
 update.showReleaseNotes: false
 window.enableMenuBarMnemonics: false

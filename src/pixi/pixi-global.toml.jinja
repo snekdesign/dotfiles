@@ -132,8 +132,11 @@ channels = [
     'conda-forge',
 ]
 platform = 'win-64'
-dependencies = { servo = '*' }
 exposed = { servo = 'servo' }
+
+[envs.servo.dependencies]
+ffmpeg = { build = 'gpl_*', channel = 'conda-forge' }
+servo = '*'
 
 [envs.ssh]
 channels = [

@@ -53,17 +53,6 @@ tombi = '*'
 vscode-pyright = '*'
 vscodium-conda-launcher = '*'
 
-[envs.crates-io-proxy]
-channels = [
-{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
-    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
-{%- endif %}
-    'conda-forge',
-]
-platform = 'win-64'
-dependencies = { crates-io-proxy = '*' }
-exposed = { crates-io-proxy = 'crates-io-proxy' }
-
 [envs.es]
 channels = [
 {%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
@@ -107,17 +96,6 @@ channels = [
 platform = 'win-64'
 dependencies = { pixi = '>=0.71.0' }
 exposed = { pixi = 'pixi' }
-
-[envs.pixi70]
-channels = [
-{%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}
-    '{{ environ.QUETZ_SERVER_URL | trim("/") }}/get/{{ environ.QUETZ_CHANNEL }}',
-{%- endif %}
-    'conda-forge',
-]
-platform = 'win-64'
-dependencies = { pixi = '0.70.*' }
-exposed = { pixi70 = 'pixi' }
 
 [envs.scc]
 channels = ['https://prefix.dev/github-releases']

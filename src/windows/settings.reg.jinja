@@ -360,6 +360,20 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows Security Health\State]
 "AccountProtection_MicrosoftAccount_Disconnected"=dword:00000000
 
+; https://hitco.at/blog/apply-edge-policies-for-non-domain-joined-devices/
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Enrollments\FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF] 
+"EnrollmentState"=dword:00000001 
+"EnrollmentType"=dword:00000000 
+"IsFederated"=dword:00000000
+"UPN"="user@Fake-MDM-Provider.local"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Provisioning\OMADM\Accounts\FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF]
+"Flags"=dword:00d6fb7f
+"AcctUId"="0x000000000000000000000000000000000000000000000000000000000000000000000000"
+"RoamingCount"=dword:00000000
+"SslClientCertReference"="MY;User;0000000000000000000000000000000000000000"
+"ProtoVer"="1.2"
+
 [HKEY_LOCAL_MACHINE\Software\Microsoft\ServerManager]
 "DoNotOpenServerManagerAtLogon"=dword:00000001
 

@@ -54,6 +54,7 @@
     - outline.removeView
     - workbench.action.closeAuxiliaryBar
     - workbench.explorer.openEditorsView.toggleVisibility
+    - zensicalStudio.connections.toggleVisibility
   when: >-
     activeViewlet == workbench.view.explorer
     && !view.workbench.explorer.openEditorsView.visible

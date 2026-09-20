@@ -1,6 +1,10 @@
 - key: f5
   command: workbench.action.reloadWindow
 
+- key: f12
+  command: workbench.action.tasks.runTask
+  args: WezTerm
+
 - key: tab
   command: editor.action.triggerSuggest
   when: >-

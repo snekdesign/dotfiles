@@ -67,7 +67,7 @@ build/vscode/settings.json :
 
 build/vscode/tasks.json :
 	mkdir -p build/vscode
-	cat src/vscode/tasks.yml src/vscode/tasks_win.yml \
+	python scripts/mj.py src/vscode/tasks.yml src/vscode/tasks_win.yml.jinja \
 		| yq -py -oj -I4 > $@
 
 build/windows/settings.reg :

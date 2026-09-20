@@ -1,4 +1,0 @@
-- label: Windows Terminal
-  type: process
-  command: wt
-  args: [-d, '.']

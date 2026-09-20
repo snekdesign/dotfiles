@@ -1,0 +1,4 @@
+- label: WezTerm
+  type: process
+  command: {{ wezterm_gui.exe|replace("/", "\\") }}
+  args: [start, --cwd, '.']

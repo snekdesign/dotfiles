@@ -1,0 +1,29 @@
+[project]
+name = 'dotfiles'
+version = '0.0.1'
+license-files = ['LICENSE']
+readme = 'README.md'
+requires-python = '>=3.14'
+
+[[project.authors]]
+name = 'snekdesign'
+
+[project.urls]
+'Source Code' = 'https://github.com/snekdesign/dotfiles'
+
+[tool.basedpyright]
+strict = ['scripts']
+typeCheckingMode = 'off'
+
+[tool.pixi.workspace]
+channels = ['conda-forge']
+platforms = ['win-64']
+
+[tool.pixi.dependencies]
+go-yq = '>=4.18.1'
+m2-coreutils = '*'
+m2-findutils = '*'
+m2-make = '*'
+m2-which = '*'
+minijinja = '*'
+xz-tools = '*'

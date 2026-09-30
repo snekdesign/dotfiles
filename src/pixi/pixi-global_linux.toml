@@ -1,0 +1,19 @@
+version = 1
+
+[envs.git]
+channels = ['conda-forge']
+platform = 'linux-64'
+dependencies = { git = '*' }
+exposed = { git = 'git' }
+
+[envs.unzip]
+channels = ['conda-forge']
+platform = 'linux-64'
+dependencies = { unzip = '*' }
+exposed = { unzip = 'unzip' }
+
+[envs.vim]
+channels = ['conda-forge']
+platform = 'linux-64'
+dependencies = { vim = '*' }
+exposed = { vi = 'vim', vim = 'vim' }

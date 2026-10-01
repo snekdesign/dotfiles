@@ -19,20 +19,20 @@ install : \
 		build/zed/keymap.json \
 		build/zed/settings.json
 	mkdir -p \
-		$(CARGO_HOME) \
-		$(PIXI_HOME)/manifests \
-		$(USERPROFILE)/Documents/PowerShell \
-		$(USERPROFILE)/Documents/WindowsPowerShell \
-		$(APPDATA)/VSCodium/User \
-		$(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState \
-		$(APPDATA)/Zed
-	cp -f build/cargo/config.toml $(CARGO_HOME)
-	cp -f build/pixi/pixi-global.toml $(PIXI_HOME)/manifests
-	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/PowerShell
-	cp -f build/pwsh/profile.ps1 $(USERPROFILE)/Documents/WindowsPowerShell
-	cp -f build/vscode/*.json $(subst \,/,$(APPDATA))/VSCodium/User
-	cp -f build/wt/settings.json $(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
-	cp -f build/zed/*.json $(subst \,/,$(APPDATA))/Zed
+		'$(CARGO_HOME)' \
+		'$(PIXI_HOME)/manifests' \
+		'$(USERPROFILE)/Documents/PowerShell' \
+		'$(USERPROFILE)/Documents/WindowsPowerShell' \
+		'$(APPDATA)/VSCodium/User' \
+		'$(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState' \
+		'$(APPDATA)/Zed'
+	cp -f build/cargo/config.toml '$(CARGO_HOME)'
+	cp -f build/pixi/pixi-global.toml '$(PIXI_HOME)/manifests'
+	cp -f build/pwsh/profile.ps1 '$(USERPROFILE)/Documents/PowerShell'
+	cp -f build/pwsh/profile.ps1 '$(USERPROFILE)/Documents/WindowsPowerShell'
+	cp -f build/vscode/*.json '$(APPDATA)/VSCodium/User'
+	cp -f build/wt/settings.json '$(LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState'
+	cp -f build/zed/*.json '$(APPDATA)/Zed'
 
 .PHONY : wsl
 wsl : build/wsl/rootfs.tar.xz

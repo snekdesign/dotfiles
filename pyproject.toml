@@ -16,10 +16,12 @@ strict = ['scripts']
 typeCheckingMode = 'off'
 
 [tool.pixi.workspace]
-channels = ['conda-forge']
+channels = ['conda-forge', 'https://prefix.dev/skill-forge']
 platforms = ['win-64']
 
 [tool.pixi.dependencies]
+agent-skill-grilling = { channel = 'https://prefix.dev/skill-forge' }
+agent-skill-librarian = { channel = 'https://prefix.dev/skill-forge' }
 go-yq = '>=4.18.1'
 m2-coreutils = '*'
 m2-findutils = '*'

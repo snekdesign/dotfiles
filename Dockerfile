@@ -1,5 +1,5 @@
 FROM ghcr.nju.edu.cn/prefix-dev/pixi:jammy
-COPY --from=ghcr.nju.edu.cn/astral-sh/uv:0.12.10 /uv /uvx /usr/local/bin/
+COPY --from=ghcr.nju.edu.cn/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 COPY --chmod=644 src/cargo/config.toml /root/.cargo/
 COPY --chmod=644 src/pixi/pixi-global_linux.toml /root/.pixi/manifests/pixi-global.toml

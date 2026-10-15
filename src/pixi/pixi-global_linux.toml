@@ -6,6 +6,18 @@ platform = 'linux-64'
 dependencies = { git = '*' }
 exposed = { git = 'git' }
 
+[envs.opencode]
+channels = ['https://prefix.dev/github-releases']
+platform = 'linux-64'
+dependencies = { opencode = '*' }
+exposed = { opencode = 'opencode' }
+
+[envs.ripgrep]
+channels = ['conda-forge']
+platform = 'linux-64'
+dependencies = { ripgrep = '*' }
+exposed = { rg = 'rg' }
+
 [envs.unzip]
 channels = ['conda-forge']
 platform = 'linux-64'

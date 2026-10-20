@@ -53,6 +53,12 @@ tombi = '*'
 vscode-pyright = '*'
 vscodium-conda-launcher = '*'
 
+[envs.dism-plus-plus]
+channels = ['https://prefix.dev/glatzel']
+platform = 'win-64'
+dependencies = { dism-plus-plus = '*' }
+exposed = { 'Dism++' = 'Dism++x64' }
+
 [envs.es]
 channels = [
 {%- if environ.QUETZ_CHANNEL and environ.QUETZ_SERVER_URL %}

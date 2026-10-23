@@ -28,7 +28,7 @@ def main():
         if not k.isidentifier():
             k = '_' + k
             if not k.isidentifier():
-                raise ValueError(p.stem)
+                continue
         context[k] = json.loads(p.read_text('utf-8'))
     context['vscodium_escaped'] = os.path.dirname(
         os.path.dirname(context['code']['exe']),

@@ -3,6 +3,9 @@
 '[markdown]':
   editor.tabSize: 2
   editor.wordWrap: 'off'
+'[toml]':
+  editor.defaultFormatter: tombi-toml.tombi
+basedpyright.analysis.baselineMode: discard
 basedpyright.analysis.typeCheckingMode: 'off'
 breadcrumbs.enabled: false
 debug.toolBarLocation: commandCenter
